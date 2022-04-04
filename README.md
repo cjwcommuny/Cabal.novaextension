@@ -1,3 +1,3 @@
 # Syntax highlighting for Cabal
 
-![screenshot](screenshot.png)
+![screenshot](https://github.com/cjwcommuny/Cabal.novaextension/raw/master/screenshot.png)
