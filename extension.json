@@ -1,0 +1,11 @@
+{
+    "identifier": "cjwcommuny.cabal",
+    "name": "Cabal",
+    "organization": "cjwcommuny",
+    "description": "Syntax highlighting for Cabal",
+    "repository": "https://github.com/cjwcommuny/Cabal.novaextension",
+    "bugs": "https://github.com/cjwcommuny/Cabal.novaextension/issues",
+    "license": "MIT",
+    "version": "1.0",
+    "categories": ["languages"]
+}

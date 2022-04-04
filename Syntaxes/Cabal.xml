@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<syntax name="Cabal" xmlns="https://www.nova.app/syntax">
+    <meta>
+        <name>Cabal</name>
+        <type>structured</type>
+        <preferred-file-extension>cabal</preferred-file-extension>
+    </meta>
+    
+    <detectors>
+        <extension priority="1.0">cabal</extension>
+    </detectors>
+    
+    <indentation>
+        <increase>
+            <expression>
+                (?:^.*:\s*$)|(?:(?:library|test-suite|executable|benchmark|foreign-library)\s+.*$)
+            </expression>
+        </increase>
+    </indentation>
+    
+    <comments>
+        <single>
+            <expression>
+                --
+            </expression>
+        </single>
+    </comments>
+    
+    <brackets>
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&lt;" close="&gt;" />
+    </brackets>
+    
+    <surrounding-pairs>
+        <pair open="&lt;" close="&gt;" />
+        <pair open="{" close="}" />
+        <pair open="[" close="]" />
+        <pair open="(" close=")" />
+        <pair open="&apos;" close="&apos;" />
+        <pair open="&quot;" close="&quot;" />
+        <pair open="`" close="`" />
+    </surrounding-pairs>
+    
+    <scopes>
+        <include syntax="self" collection="comments" />
+        <include syntax="self" collection="values" />
+        <include syntax="self" collection="keywords" />
+        <include syntax="self" collection="keys" />
+    </scopes>
+    
+    <collections>
+        <collection name="values">
+            <scope name="cabal.value.number">
+                <expression>
+                    \b[0-9]+(\.([0-9]+|\*))*
+                </expression>
+            </scope>
+        </collection>
+        
+        <collection name="comments">
+            <scope name="cabal.comment.single">
+                <expression>
+                    --.*$
+                </expression>
+            </scope>
+        </collection>
+        
+        <collection name="keywords">
+            <scope name="cabal.keyword">
+                <strings>
+                    <string>library</string>
+                    <string>test-suite</string>
+                    <string>executable</string>
+                    <string>benchmark</string>
+                    <string>foreign-library</string>
+                </strings>
+            </scope>
+        </collection>
+
+        <collection name="keys">
+            <scope name="cabal.declaration">
+                <expression>
+                    ([^\s]+):
+                </expression>
+                <capture number="1" name="cabal.string.key"/>
+            </scope>
+        </collection>
+    </collections>
+</syntax>
