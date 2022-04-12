@@ -6,6 +6,6 @@
     "repository": "https://github.com/cjwcommuny/Cabal.novaextension",
     "bugs": "https://github.com/cjwcommuny/Cabal.novaextension/issues",
     "license": "MIT",
-    "version": "1.0",
+    "version": "1.0.1",
     "categories": ["languages"]
 }
